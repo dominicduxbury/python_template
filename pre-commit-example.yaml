@@ -1,0 +1,19 @@
+repos:
+  # Ruff pre-commit
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.8
+    hooks:
+      # Run the linter.
+      - id: ruff-check
+        args: [--fix]  # auto-fix errors
+      # Run the formatter.
+      - id: ruff-format
+
+  # Pytest pre-commit
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: make test
+        language: system
+        types: [python]

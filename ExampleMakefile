@@ -1,0 +1,12 @@
+.PHONY: install start test
+
+install:
+	@read -p "Make sure you have a virtualenv active then press <enter> " </dev/tty
+	pip install -r requirements
+	pre-commit install
+
+start:
+	python src/main.py
+
+test:
+	pytest
