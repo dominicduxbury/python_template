@@ -3,6 +3,7 @@ setup_python_repo:
 	@mkdir ~/code/${name}
 	@mkdir ~/code/${name}/src
 	@cp requirements.txt ~/code/${name}/requirements.txt
+	@cp .gitignore ~/code/${name}/.gitignore
 	@cp main.py ~/code/${name}/src/main.py
 	@cp -r ./tests ~/code/${name}/tests
 	@cp ExampleMakefile ~/code/${name}/Makefile
