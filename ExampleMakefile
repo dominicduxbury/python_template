@@ -2,7 +2,7 @@
 
 install:
 	@read -p "Make sure you have a virtualenv active then press <enter> " </dev/tty
-	pip install -r requirements
+	pip install -r requirements.txt
 	pre-commit install
 
 start:
