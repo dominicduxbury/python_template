@@ -1,12 +1,14 @@
-.PHONY: install start test
+help: ## Print this help
+	@echo 'All Makefile commands:'
+	@grep -h -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-install:
+install: ## Install packages and puts pre-commit hooks into .git/hooks/pre-commit
 	@read -p "Make sure you have a virtualenv active then press <enter> " </dev/tty
 	pip install -r requirements.txt
 	pre-commit install
 
-start:
+start: ## Run src/main.py.
 	python src/main.py
 
-test:
+test: ## Runs the tests (./tests)
 	pytest
