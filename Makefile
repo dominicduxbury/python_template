@@ -8,3 +8,6 @@ setup_python_repo:
 	@cp ExampleMakefile ~/code/${name}/Makefile
 	@cp pytest.ini ~/code/${name}/pytest.ini
 	@cp pre-commit-example.yaml ~/code/${name}/.pre-commit-config.yaml
+	@read -p "Press <enter> to create a (local) git repo in '~/code/${name}'" </dev/tty
+	@cd ~/code/${name} && git init
+	cd ~/code/${name}
